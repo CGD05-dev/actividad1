@@ -1,3 +1,6 @@
+"""David Antonio Zarate Villaseñor A01665896
+Christopher Gordillo Dominguez A01666339
+"""
 """Paint, for drawing shapes.
 
 Exercises
