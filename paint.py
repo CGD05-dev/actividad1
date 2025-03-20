@@ -2,8 +2,8 @@
 
 Exercises
 
-1. Add a color. ✅ (Yellow)
-2. Complete circle. ✅
+1. Add a color.  (Yellow)
+2. Complete circle. 
 3. Complete rectangle.
 4. Complete triangle.
 5. Add width parameter.
@@ -33,15 +33,16 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
+def makecircle(start, end):
     """Draw circle from start to end."""
     up()
-    goto(start.x, start.y - (end.x - start.x))  # Ajusta la posición para centrar el círculo
+    radius = ((end.x - start.x) ** 2 + (end.y - start.y) ** 2) ** 0.5  
+    goto(start.x, start.y - radius) 
     down()
     begin_fill()
-    turtle_radius = math.dist((start.x, start.y), (end.x, end.y))  # Calcula el radio
-    turtle.circle(turtle_radius)
+    circle(radius)
     end_fill()
+
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
@@ -101,10 +102,10 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('yellow'), 'Y')  # Nuevo color amarillo
+onkey(lambda: color('yellow'), 'Y')  
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')  # Ahora puede dibujar círculos
+onkey(lambda: store('shape', makecircle), 'c')  
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
